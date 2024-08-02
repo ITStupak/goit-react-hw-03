@@ -22,7 +22,7 @@ export default function App() {
   return (
     <div>
       <h1 className="title">Phonebook</h1>
-      <ContactForm />
+      {<ContactForm />}
       <SearchBox handleSearch={handleSearch} />
       <ContactList filteredContacts={filteredContacts} />
     </div>
