@@ -1,5 +1,6 @@
 import css from "./SearchBox.module.css";
-export default function SearchBox() {
+
+export default function SearchBox({ searchValue, handleSearch }) {
   return (
     <div className={css.search}>
       <label className={css["search-label"]} htmlFor="search">
@@ -10,6 +11,8 @@ export default function SearchBox() {
         type="text"
         id="search"
         placeholder="Enter your characters..."
+        value={searchValue}
+        onChange={handleSearch}
       />
     </div>
   );
