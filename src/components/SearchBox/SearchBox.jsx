@@ -1,6 +1,6 @@
 import css from "./SearchBox.module.css";
 
-export default function SearchBox({ searchValue, handleSearch }) {
+const SearchBox = ({ searchValue, handleSearch }) => {
   return (
     <div className={css.search}>
       <label className={css["search-label"]}>
@@ -17,4 +17,5 @@ export default function SearchBox({ searchValue, handleSearch }) {
       </label>
     </div>
   );
-}
+};
+export default SearchBox;

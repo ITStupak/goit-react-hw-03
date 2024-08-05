@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 
-export default function ContactForm({ onAddContact }) {
+const ContactForm = ({ onAddContact }) => {
   const phoneRegExp = /^[0-9]{3}-[0-9]{2}-[0-9]{2}$/;
 
   const ContactSchema = Yup.object().shape({
@@ -79,4 +79,5 @@ export default function ContactForm({ onAddContact }) {
       )}
     </Formik>
   );
-}
+};
+export default ContactForm;

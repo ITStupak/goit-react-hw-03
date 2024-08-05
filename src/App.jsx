@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
-import "./App.css";
 import dataContacts from "./data/contacts.json";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactForm from "./components/ContactForm/ContactForm";
+import "./App.css";
 
-export default function App() {
-  const [contacts, setContacts] = useState(dataContacts);
+const App = () => {
+  const [contacts, setContacts] = useState(() => {
+    const savedContacts = window.localStorage.getItem("contactsValue");
+    return JSON.parse(savedContacts) ?? dataContacts;
+  });
   const [searchValue, setSearchValue] = useState("");
+
+  useEffect(() => {
+    window.localStorage.setItem("contactsValue", JSON.stringify(contacts));
+  }, [contacts]);
 
   const handleSearch = (e) => {
     const value = e.target.value;
@@ -42,4 +49,5 @@ export default function App() {
       />
     </div>
   );
-}
+};
+export default App;
