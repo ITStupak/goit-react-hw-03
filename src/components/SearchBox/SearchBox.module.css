@@ -5,16 +5,19 @@
   margin-bottom: 16px;
 }
 .search-label {
-  font-size: 22px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 18px;
   font-weight: 500;
 }
 .search-input {
-  max-width: 300px;
+  width: 304px;
   padding: 6px 12px;
   outline: none;
   border: 1px solid rgb(60, 60, 60);
   border-radius: 10px;
-  background-color: transparent;
   font-size: 18px;
 }
 .search-input:focus {
